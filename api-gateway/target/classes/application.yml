@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes[0]:
+        id: product-service
+        uri:
+          lb://product-service
+        predicates:
+          - Path=/api/product
+      routes[1]:
+        id: order-service
+        uri:
+          lb://order-service
+        predicates:
+          - Path=/api/product
+  main:
+    web-application-type: reactive
+logging:
+  level:
+    org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
+    org.springframework.cloud.gateway: TRACE
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 0

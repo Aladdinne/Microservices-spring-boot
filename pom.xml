@@ -20,6 +20,8 @@
         <module>orderService</module>
         <module>inventoryService</module>
         <module>dicoverr-server</module>
+        <module>api-gateway</module>
+
     </modules>
 
     <properties>
