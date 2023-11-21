@@ -1,2 +1,12 @@
-package com.programmingtechie.orderservice.event;public class OrderPlaceEvent {
+package com.programmingtechie.orderservice.event;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class OrderPlaceEvent {
+    private String OrderNumber ;
 }
